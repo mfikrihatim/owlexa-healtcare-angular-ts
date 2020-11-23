@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="mb60 mb50-sm"></div>
+
+<div class="container">
+  <h2 class="title custom">Press Release</h2>
+  <div class="mb25 mb50-sm"></div>
+  <div class="card mb-4"*ngFor="let berita of news">
+    <div class="card-body" >
+      <div class="row">
+        <div class="col-lg-6">
+          <a href="#">
+            <img class="img-fluid rounded" src="assets/images/Arya_Damar_1.jpg" alt="" style="width: 100%; height: 300px;">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <h2 class="card-title">{{berita.title}}
+          </h2>
+          <p class="card-text text-justify">{{berita.wording}}</p>
+          <a href="owlexa/artikel-detail" class="btn btn-primary">Read More &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      Posted on January 1, 2020 by
+      <a href="#">Irmansyah</a>
+    </div>
+  </div>
+</div>
+<div class="mb60 mb50-sm"></div>
+
+<app-footerpage></app-footerpage>

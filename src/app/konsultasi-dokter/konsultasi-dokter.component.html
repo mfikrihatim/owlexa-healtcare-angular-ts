@@ -1,0 +1,124 @@
+<app-navbar></app-navbar>
+
+<div class="mb20 mb50-sm"></div>
+<div class="container">
+  <h2 class="title custom">Forum Tanya Dokter</h2>
+  <div class="row">
+
+    <!-- Blog Entries Column -->
+    <div class="col-md-4">
+
+      <!-- Search Widget -->
+
+
+      <!-- Categories Widget -->
+      <div class="card my-4">
+        <h3 class="card-header">Categories</h3>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Seputaran Penyakit
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Penyakit Lainnya </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Kulit & Kelamin </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Kandungan </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Pernapasan </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Perut </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Kepala </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Infeksi </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Psikologi</span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Mata </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Jantung </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Gigi dan Mulut </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Saraf </span></li>
+                    <li class="list-group-item"><span class="fa fa-heartbeat"> Kanker </span></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- Side Widget -->
+
+    </div>
+
+
+    <div class="col-md-8">
+      <div class="mb15 mb50-sm"></div>
+
+      <!-- Blog Post -->
+      <div class="card mb-4 card-pertanyaan">
+        <textarea style="width: auto; height: 100px" placeholder="Tulis Pertanyaan Anda"></textarea>
+        <hr>
+        <div class="card-body">
+          <p class="card-text text-muted"><i>Postingan membutuhkan waktu beberapa saat untuk tampil</i><button class="btn btn-primary" id="btn-kiri" (click)="openModal()">Kirim</button></p>
+        </div>
+        <div class="card-footer text-muted">
+          maks. 500 karakter
+        </div>
+      </div>
+
+      <div class="card mb-3 card-pertanyaan">
+        <div class="card-header text-muted">24 Feb 2020, 11:07  Kulit & Kelamin</div>
+        <div class="card-body">
+          <h3 class="card-title font-weight-bold">Apa penyebab flek hitam di wajah dan bagaimana cara mengatasinya?</h3>
+          <div class="media mb-0">
+            <img class="d-flex mr-3 rounded-circle avatar" src="assets/images/svg/eye.svg" alt="">
+            <div class="media-body">
+              <h5 class="mt-2 info-penanya font-weight-bold">Info Penanya : Yani Mautannya</h5>
+            </div>
+          </div>
+          <hr>
+          <p class="card-text text-justify pertanyan">
+            Dok saya umur 26 tahun saya belum menikah. Di wajah saya memiliki flek hitam yang sangat mengganggu padahal saya tidak pernah konsumsi obat kaba atau melakukan program KB
+            Dijawab oleh dr. Aisyah Nur Ramadhani
+          </p>
+          <p class="card-text text-justify pertanyan font-weight-bold"><span class="fa fa-check-circle "></span> Dijawab oleh dr. Aisyah Nur Ramadhani</p>
+          <p class="pertanyan">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+            <span class="badge badge-pill badge-light text-black-50 fa fa-eye fa-2x"> 30 Lihat</span>
+            <span class="badge badge-pill badge-light text-black-50 fa fa-commenting-o fa-2x span-kiri"> 30 Balasan</span>
+          </p>
+        </div>
+      </div>
+
+
+
+      <ul class="pagination justify-content-center mb-4">
+        <li class="page-item">
+          <a class="page-link" href="#">&larr; Older</a>
+        </li>
+        <li class="page-item disabled">
+          <a class="page-link" href="#">Newer &rarr;</a>
+        </li>
+      </ul>
+
+    </div>
+
+    <!-- Sidebar Widgets Column -->
+
+
+
+  </div>
+
+</div>
+<div class="mb60 mb50-sm"></div>
+<main id="logout-button-holder">
+  <button mat-raised-button id="logout-button" (click)="openModal()">Logout</button>
+  <button mat-raised-button id="delete-product-button" (click)="openModal()">Delete Product</button>
+</main>
+<app-footerpage></app-footerpage>

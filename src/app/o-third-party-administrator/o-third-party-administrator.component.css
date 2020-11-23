@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+.images_view {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.images_view img {
+  vertical-align: middle;
+  height: 45rem;
+}
+
+
+.images_view .content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+.h1{
+  background-color: #0073aa;
+}
+ul.list {
+  list-style-type: square;
+  text-align: justify;
+
+}

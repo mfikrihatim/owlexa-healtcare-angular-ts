@@ -1,0 +1,463 @@
+<app-navbar></app-navbar>
+
+<div class="mb60 mb50-sm"></div>
+
+<div class="container">
+  <h2 class="title custom">Registrasi Provider Baru</h2>
+  <div class="mb25 mb50-sm"></div>
+  <div [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+      <label for="ProviderName" class="col-sm-2 col-form-label">Provider Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="providerName" placeholder="Provider Name" [(ngModel)]="providers.providerName" name="providerName">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="ProviderCategory" class="col-sm-2 col-form-label">Provider Category</label>
+      <div class="col-sm-10">
+        <select class="custom-select" id="providerCategory" [(ngModel)]="providers.providerCategory" name="providerCategory">
+          <option selected>Open this select menu</option>
+          <option value="Dokter Umum">Dokter Umum</option>
+          <option value="Dokter Specialist">Dokter Specialist</option>
+          <option value="Dokter Gigi Umum">Dokter Gigi Umum</option>
+          <option value="Rumah Sakit Klinik">Rumah Sakit Klinik</option>
+          <option value="Rumah Bersalin">Rumah Bersalin</option>
+          <option value="Rumah Sakit Ibu & Anak">Rumah Sakit Ibu & Anak</option>
+          <option value="Apotek">Apotek</option>
+          <option value="Laboratorium">Laboratorium</option>
+          <option value="Optik">Optik</option>
+          <option value="Rumah Sakit Umum">Rumah Sakit Umum</option>
+          <option value="Rumah Sakit Umum Daerah">Rumah Sakit Umum Daerah</option>
+          <option value="APOTEK & KLINIK">APOTEK & KLINIK</option>
+          <option value="RB & KLINIK">RB & KLINIK</option>
+          <option value="KLINIK BEDAH">KLINIK BEDAH</option>
+          <option value="RSB">RSB</option>
+          <option value="RSAL">RSAL</option>
+          <option value="KLINIK & LAB">KLINIK & LAB</option>
+          <option value="Personal Doctor">Personal Doctor</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Address" class="col-sm-2 col-form-label">Address</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" id="Address" placeholder="Address"  [(ngModel)]="providers.address" name="address"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="City" class="col-sm-2 col-form-label">City</label>
+      <div class="col-sm-10">
+        <select class="custom-select" id="city" [(ngModel)]="providers.city" name="city">
+          <option selected>Open this select your city</option>
+          <option value="Bandung">Bandung</option>
+          <option value="Jakarta">Jakarta</option>
+          <option value="Yogyakarta">Yogyakarta</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Province" class="col-sm-2 col-form-label">Province</label>
+      <div class="col-sm-10">
+        <select class="custom-select" id="province" [(ngModel)]="providers.province" name="province">
+          <option selected>Open this select your province</option>
+          <option value="Jawa Barat">Bandung</option>
+          <option value="DKI Jakarta">DKI Jakarta</option>
+          <option value="Daerah Istimewa Yogyakarta">Darah Istimewa Yogyakarta</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Country" class="col-sm-2 col-form-label">Country</label>
+      <div class="col-sm-10">
+        <select class="custom-select" id="country" [(ngModel)]="providers.country" name="country">
+          <option selected>Open this select your country</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Singapura">Singapura</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="PostalCode" class="col-sm-2 col-form-label">Postal Code</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="postalCode" placeholder="Postal Code" [(ngModel)]="providers.postalCode" name="postalCode">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="BankName" class="col-sm-2 col-form-label">Bank Name</label>
+      <div class="col-sm-10">
+        <select class="custom-select" id="bankName" [(ngModel)]="providers.bankName" name="bankName">
+          <option selected>Open this select your bank name</option>
+          <option value="Mandiri">Mandiri</option>
+          <option value="BCA">BCA</option>
+          <option value="BNI">BNI</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="BankAccount" class="col-sm-2 col-form-label">Bank Account</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="bankAccount" placeholder="Bank Account" [(ngModel)]="providers.bankAccount" name="bankAccount">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="BankAccountName" class="col-sm-2 col-form-label">Bank Account Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="bankAccountName" placeholder="Bank Account Name" [(ngModel)]="providers.bankAccountName" name="bankAccountName">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="NoNPWP" class="col-sm-2 col-form-label">No NPWP</label>
+      <div class="col-sm-10">
+        <input type="text" class="col-sm-2 col-form-label" id="nomer_mpwp" placeholder="Nomer NPWP"  [(ngModel)]="providers.nomerNpwp" name="nomerNpwp">
+        <input type="file" class="col-sm-3 col-form-label" id="NoNPWP" [(ngModel)]="providers.npwp" name="npwp">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="TDP" class="col-sm-2 col-form-label">TDP</label>
+      <div class="col-sm-10">
+        <input type="text" class="col-sm-2 col-form-label" id="nomer_TDP" placeholder="Nomer TDP" [(ngModel)]="providers.nomerTdp" name="nomerTdp">
+        <input type="file" class="col-sm-3 col-form-label" id="TDP" [(ngModel)]="providers.tdp" name="tdp">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="SuratIzinOperasional" class="col-sm-2 col-form-label">Surat Izin Operasional</label>
+      <div class="col-sm-10">
+        <input type="text" class="col-sm-2 col-form-label" id="suratizinoperasional" placeholder="Nomer TDP" [(ngModel)]="providers.nomerSuratIzinOps" name="nomerSuratIzinOps">
+        <input type="file" class="col-sm-3 col-form-label" id="SuratIzinOperasional" [(ngModel)]="providers.suratIzinOps" name="suratIzinOps">
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="SoftcopyTarif " class="col-sm-2 col-form-label">Softcopy Tarif</label>
+      <div class="col-sm-10">
+        <input type="file" class="col-sm-3 col-form-label" id="SoftcopyTarif" [(ngModel)]="providers.softcopyTarif" name="softcopyTarif">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="SuratIzinPenetapanKelasRS" class="col-sm-2 col-form-label">Surat Izin Penetapan Kelas RS</label>
+      <div class="col-sm-10">
+        <input type="file" class="col-sm-3 col-form-label" id="SuratIzinPenetapanKelasRS"[(ngModel)]="providers.suratIzinPenetapanKelas" name="suratIzinPenetapanKelas">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="SoftcopyDaftarObat" class="col-sm-2 col-form-label">Softcopy Daftar Obat</label>
+      <div class="col-sm-10">
+        <input type="file" class="col-sm-3 col-form-label" id="SoftcopyDaftarObat"[(ngModel)]="providers.softcopyObat" name="softcopyObat">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="CompanyProfile" class="col-sm-2 col-form-label">Company Profile</label>
+      <div class="col-sm-10">
+        <input type="file" class="col-sm-3 col-form-label" id="CompanyProfile"[(ngModel)]="providers.companyProfile" name="companyProfile">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Telephone" class="col-sm-2 col-form-label">Telephone</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="Telephone" placeholder="Telephone"[(ngModel)]="providers.telelphone" name="telelphone">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Fax" class="col-sm-2 col-form-label">Fax</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="Fax" placeholder="Fax" [(ngModel)]="providers.fax" name="fax">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Email" class="col-sm-2 col-form-label">Nama, No Tlp & Email Marketing</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="Nama" placeholder="Nama" [(ngModel)]="providers.namaMarketing" name="namaMarketing">
+        <input type="number" class="form-control" id="NoTlp" placeholder="No Telephone" [(ngModel)]="providers.telpMarketing" name="telpMarketing">
+        <input type="number" class="form-control" id="Email" placeholder="E-mail" [(ngModel)]="providers.emailMarketing" name="emailMarketing">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="EmailFinance" class="col-sm-2 col-form-label">Nama, No Tlp & Email Finance</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="NamaFinace" placeholder="Nama" [(ngModel)]="providers.namaFinance" name="namaFinance">
+        <input type="number" class="form-control" id="NoTlpFinance" placeholder="No Telephone" [(ngModel)]="providers.telpFinance" name="telpFinance">
+        <input type="number" class="form-control" id="EmailFinance" placeholder="E-mail Finance" [(ngModel)]="providers.emailFinance" name="emailFinance">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="EmailIt" class="col-sm-2 col-form-label">Nama, No Tlp & Email IT</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="NamaIT" placeholder="Nama" [(ngModel)]="providers.namaIt" name="namaIt">
+        <input type="number" class="form-control" id="NoTlpIT" placeholder="No Telephone" [(ngModel)]="providers.telpIt" name="telpIt">
+        <input type="number" class="form-control" id="EmailIt" placeholder="E-mail IT" [(ngModel)]="providers.emailIt" name="emailIt">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Website" class="col-sm-2 col-form-label">Website</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="Website" placeholder="Website" [(ngModel)]="providers.website" name="website">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="NomorTelpContactPerson" class="col-sm-2 col-form-label">Nomor Telp Contact Person</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="NomorTelpContactPerson" placeholder="Nomor Telp Contact Person" [(ngModel)]="providers.telpCp" name="telpCp">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Longitude" class="col-sm-2 col-form-label">Longitude</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="Longitude" placeholder="Longitude" [(ngModel)]="providers.longitude" name="logitude">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Latitude" class="col-sm-2 col-form-label">Latitude</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="Latitude" placeholder="Latitude" [(ngModel)]="providers.latitude" name="latitude">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="JasaLayananOwlexa" class="col-sm-2 col-form-label">Jasa Layanan Owlexa</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="" type="checkbox" id="Indemnity" value="Indemnity" [(ngModel)]="providers.indemnity" name="indemnity">
+            <label class="" for="Indemnity">Indemnity</label>&nbsp;&nbsp;
+
+            <input class="" type="checkbox" id="SemiManagedCare" value="Semi Managed Care" [(ngModel)]="providers.semiManagedCare" name="semiManagedCare">
+            <label class="" for="SemiManagedCare">Semi Managed Care</label>&nbsp;&nbsp;
+
+            <input class="" type="checkbox" id="ManagedCare" value="Managed Care" [(ngModel)]="providers.managedCare" name="managedCare">
+            <label class="" for="ManagedCare">ManagedCare</label>&nbsp;&nbsp;
+
+            <input class="" type="checkbox" id="OptimalisasiBPJS" value="Optimalisasi BPJS" [(ngModel)]="providers.optimasiBPJS" name="optimasiBPJS">
+            <label class="" for="OptimalisasiBPJS">Optimalisasi BPJS</label>&nbsp;&nbsp;
+
+            <input class="" type="checkbox" id="TechnologyOnly" value="Technology Only" [(ngModel)]="providers.technologyOnly" name="technologyOnly">
+            <label class="" for="TechnologyOnly">Technology Only</label>&nbsp;&nbsp;
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Layanan VIP</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="" type="radio" name="vip" id="ya_vip" value="Bersedia" [(ngModel)]="providers.vip" name="vip">
+            <label class="">
+              Bersedia
+            </label>&nbsp;&nbsp;
+
+            <input class="" type="radio" name="vip" id="tidak_vip" value="Tidak Bersedia" [(ngModel)]="providers.vip" name="vip">
+            <label class="">
+              Tidak Bersedia
+            </label>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Bekerjasama dengan BPJS</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="" type="radio" name="BPJS" id="ya_bpjs" value="YA" [(ngModel)]="providers.kerjasamaBpjs" name="kerjasamaBpjs">
+            <label class="">
+              YA
+            </label>&nbsp;&nbsp;
+
+            <input class="" type="radio" name="BPJS" id="tidak_bpjs" value="Tidak" [(ngModel)]="providers.kerjasamaBpjs" name="kerjasamaBpjs">
+            <label class="">
+              TIDAK
+            </label>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Jaringan Internet</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="" type="radio" name="internet" id="stabil" value="Stabil" [(ngModel)]="providers.jaringanInet" name="jaringanInet">
+            <label class="">
+              Stabil
+            </label>&nbsp;&nbsp;
+
+            <input class="" type="radio" name="internet" id="tidak_stabil" value="Tidak Stabil" [(ngModel)]="providers.jaringanInet" name="jaringanInet">
+            <label class="">
+              Tidak Stabil
+            </label>&nbsp;&nbsp;
+
+            <input class="" type="radio" name="internet" id="tdak_ada_jaringan" value="Tidak Ada Jaringan" [(ngModel)]="providers.jaringanInet" name="jaringanInet">
+            <label class="">
+              Tidak Ada Jaringan
+            </label>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Website" class="col-sm-2 col-form-label">Diskon</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="diskon" placeholder="Diskon %" [(ngModel)]="providers.diskon" name="diskon">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Kesepakatan Harga</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="" type="radio" name="kesepakatan_harga" id="ya_sepakat" value="Bersedia" [(ngModel)]="providers.kesepakatanHarga" name="kesepakatanHarga">
+            <label class="">
+              Bersedia
+            </label>&nbsp;&nbsp;
+
+            <input class="" type="radio" name="kesepakatan_harga" id="tidak_sepakat" value="Tidak Bersedia" [(ngModel)]="providers.kesepakatanHarga" name="kesepakatanHarga">
+            <label class="">
+              Tidak Bersedia
+            </label>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Sistem Informasi Rumah Sakit (SIM RS)</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="" type="radio" name="simrs" id="simrs_ya" value="Ya" [(ngModel)]="providers.sisfoRs" name="sisfoRs">
+            <label class="">
+              Ya
+            </label>&nbsp;&nbsp;
+
+            <input class="" type="radio" name="simrs" id="simrs_tidak" value="Tidak" [(ngModel)]="providers.sisfoRs" name="sisfoRs">
+            <label class="">
+              Tidak
+            </label>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Bersedia melakukan bridging</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="" type="radio" name="bridging" id="ya_bridging" value="Ya" [(ngModel)]="providers.bersediaBridging" name="bersediaBridging" [checked]="true">
+            <label class="">
+              Ya
+            </label>&nbsp;&nbsp;
+
+            <input class="" type="radio" name="bridging" id="tidak_bridging" value="Tidak" [(ngModel)]="providers.bersediaBridging" name="bersediaBridging">
+            <label class="">
+              Tidak
+            </label>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Bersedia melakukan digital claim (e-claim)</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="" type="radio" name="claim" id="claim_ya" value="Ya" [(ngModel)]="providers.digitalClaim" name="digitalClaim">
+            <label class="">
+              Ya
+            </label>&nbsp;&nbsp;
+
+            <input class="" type="radio" name="claim" id="claim_tidak" value="Tidak" [(ngModel)]="providers.digitalClaim" name="digitalClaim">
+            <label class="">
+              Tidak
+            </label>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Bersedia melakukan pelayanan selama PKS dalam proses</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="" type="radio" name="pks" id="pks_ya" value="Ya" [(ngModel)]="providers.bersediaPksProses" name="bersediaPksProses">
+            <label class="">
+              Ya
+            </label>&nbsp;&nbsp;
+
+            <input class="" type="radio" name="pks" id="pks_tidak" value="Tidak" [(ngModel)]="providers.bersediaPksProses" name="bersediaPksProses">
+            <label class="">
+              Tidak
+            </label>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="SuratPermintaanKerjasamadenganOwlexaHealthcare" class="col-sm-2 col-form-label">Surat Permintaan
+        Kerjasama dengan Owlexa Healthcare</label>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <div class="col-sm-10">
+            <input type="file" class="col-sm-4 col-form-label" id="SuratPermintaanKerjasamadenganOwlexaHealthcare" [(ngModel)]="providers.suratKerjasamaOwlexa" name="suratKerjasamaOwlexa">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-5">
+        <div class="form-group">
+          <div class="col-5">
+            <button type="submit" class="btn btn-primary">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+  </div>
+</div>
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
+
+<div class="mb60 mb50-sm"></div>
+
+<app-footerpage></app-footerpage>

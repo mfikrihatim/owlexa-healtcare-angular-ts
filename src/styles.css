@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  font-size: 1.55em;
+}
+
+.btn{
+  font-size: 1.2em;
+}
+mat-dialog-container#modal-component {
+  border: 3px solid #0d9dff;
+  border-radius: 11px;
+  background-color: #0d9dff;
+}
+

@@ -1,0 +1,14 @@
+
+<app-navbar></app-navbar>
+<div class="mb60 mb50-sm"></div>
+<div class="container">
+  <h2 class="title custom">Struktur Organisasi</h2>
+
+
+<!--  <ng2-org-chart [topEmployee]="topEmployee"></ng2-org-chart>-->
+  <ngx-org-chart [nodes]="nodes" direction="vertical" (itemClick)="openModal($event)" ></ngx-org-chart>
+  <div class="mb60 mb50-sm"></div>
+</div><!-- End .container -->
+
+
+<app-footerpage></app-footerpage>
