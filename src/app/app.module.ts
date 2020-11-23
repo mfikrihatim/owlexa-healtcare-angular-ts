@@ -58,6 +58,7 @@ import { SurveiOnlineKorporasiComponent } from './survei-online-korporasi/survei
 import { SurveiOnlineMemberComponent } from './survei-online-member/survei-online-member.component';
 import { NavbarFixedTopComponent } from './navbar-fixed-top/navbar-fixed-top.component';
 import { LoginComponent } from './login/login.component';
+import { TentangKamiService } from './services/tentang-kami.service';
 
 declare var $: any;
 console.log(`jQuery version: ${$.fn.jquery}`);
@@ -124,7 +125,7 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     MatDialogModule,
     BrowserAnimationsModule,
   ],
-  providers: [CrudService],
+  providers: [CrudService,TentangKamiService],
   bootstrap: [AppComponent],
   entryComponents: [ModalComponent]
 })
