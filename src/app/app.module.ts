@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterpageComponent } from './footerpage/footerpage.component';
 import { HomebodyComponent } from './homebody/homebody.component';
@@ -52,13 +52,14 @@ import { DaftarJaringanKesehatanComponent } from './daftar-jaringan-kesehatan/da
 import { DetailPromoComponent } from './detail-promo/detail-promo.component';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { ChatComponent } from './chat/chat.component';
-import {CrudService} from './crud.service';
+import { CrudService } from './crud.service';
 import { SurveiOnlineProviderComponent } from './survei-online-provider/survei-online-provider.component';
 import { SurveiOnlineKorporasiComponent } from './survei-online-korporasi/survei-online-korporasi.component';
 import { SurveiOnlineMemberComponent } from './survei-online-member/survei-online-member.component';
 import { NavbarFixedTopComponent } from './navbar-fixed-top/navbar-fixed-top.component';
 import { LoginComponent } from './login/login.component';
 import { TentangKamiService } from './services/tentang-kami.service';
+import { LayananService } from './services/layanan.service';
 
 declare var $: any;
 console.log(`jQuery version: ${$.fn.jquery}`);
@@ -125,7 +126,7 @@ console.log(`jQuery version: ${$.fn.jquery}`);
     MatDialogModule,
     BrowserAnimationsModule,
   ],
-  providers: [CrudService,TentangKamiService],
+  providers: [CrudService, TentangKamiService, LayananService],
   bootstrap: [AppComponent],
   entryComponents: [ModalComponent]
 })

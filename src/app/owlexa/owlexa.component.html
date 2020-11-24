@@ -2,18 +2,20 @@
 
 <div class="mb60 mb50-sm"></div>
 <div class="container">
-  <h2 class="title custom">Mengenal Owlexa</h2>
+  <h2 class="title custom">{{business_unit.judul_business_unit}}</h2>
   <div class="mb20 mb50-sm"></div>
   <div class="row">
     <div class="col-lg-6">
-      <iframe width="640" height="360" src="https://www.youtube.com/embed/kPO9uHp-DzM"
-              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/kPO9uHp-DzM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
                picture-in-picture" allowfullscreen>
       </iframe>
     </div>
     <div class="col-lg-6">
-      <img class="img-fluid rounded mb-4" src="assets/images/logo_kecil_resize.jpg" style="width: 110px; height: 80px; position: relative">
-      <p style="text-align: justify"><b>Owlexa </b>merupakan bentuk pelayanan untuk memenuhi kebutuhan layanan administrasi asuransi dan
+      <img class="img-fluid rounded mb-4" src="assets/images/logo_kecil_resize.jpg"
+        style="width: 110px; height: 80px; position: relative">
+      <div [innerHTML]="business_unit.judul_business_unit"></div>
+      <!-- <p style="text-align: justify"><b>Owlexa </b>merupakan bentuk pelayanan untuk memenuhi kebutuhan layanan
+        administrasi asuransi dan
         jaminan kesehatan yang handal, cepat dan akurat, maka PT Aplikanusa Lintasarta
         membentuk unit bisnis e-Health dengan brand Owlexa Healthcare. Dengan pengalaman
         selama 29 tahun sebagai perusahaan yang melayani lebih dari 2500 korporasi,
@@ -24,11 +26,11 @@
         policy administration, eligibility member, case monitoring, discharge sampai pada
         proses pembayaran tagihan klaim biaya pengobatan. Didukung oleh sistem dan teknologi
         yang handal serta sumber daya manusia berpengalaman di bidangnya, Owlexa dapat memberikan
-        layanan administrasi kesehatan yang optimal, efisien, cepat dan akurat serta pelayanan terbaik.</p>
+        layanan administrasi kesehatan yang optimal, efisien, cepat dan akurat serta pelayanan terbaik.</p> -->
+
 
     </div>
   </div>
 </div>
 <div class="mb60 mb50-sm"></div>
 <app-footerpage></app-footerpage>
-
