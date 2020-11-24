@@ -21,7 +21,6 @@ export class TentangKamiService {
   constructor(private http: HttpClient) { }
   // GET
   GetStruktureOrganisasi(): Observable<any> {
-    debugger
       var result = this.http.get<any>(this.baseurl + `/Struktur_Organisasi/Struktur_Organisasi`)
       .pipe(
         retry(1),
@@ -30,6 +29,17 @@ export class TentangKamiService {
     
     return result;
   }
+
+  GetLintasarta(): Observable<any> {
+    debugger
+    var result = this.http.get<any>(this.baseurl + `/Lintasarta/Lintasarta`)
+    .pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    )
+  
+  return result;
+}
 
   
    // GET BY ID
