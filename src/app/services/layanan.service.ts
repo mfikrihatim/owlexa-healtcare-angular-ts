@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment'
 @Injectable({
   providedIn: 'root'
 })
-export class TentangKamiService {
+export class LayananService {
   // Http Headers
   httpOptions = {
     // headers: new HttpHeaders({
@@ -19,9 +19,9 @@ export class TentangKamiService {
   baseurl = `${environment.apiUrl}`
 
   constructor(private http: HttpClient) { }
-  // GET
-  GetStruktureOrganisasi(): Observable<any> {
-    var result = this.http.get<any>(this.baseurl + `/Struktur_Organisasi/Struktur_Organisasi`)
+  GET
+  GetThirdParty(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/third_party/third_party`)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
@@ -30,9 +30,8 @@ export class TentangKamiService {
     return result;
   }
 
-  GetLintasarta(): Observable<any> {
-    debugger
-    var result = this.http.get<any>(this.baseurl + `/Lintasarta/Lintasarta`)
+  GetSemiManagedCare(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/semi_managed_care/semi_managed_care`)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
@@ -41,9 +40,8 @@ export class TentangKamiService {
     return result;
   }
 
-  GetBisnisUnit(): Observable<any> {
-    debugger
-    var result = this.http.get<any>(this.baseurl + `/Business_Unit/Business_Unit`)
+  GetManagedCare(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/managed_care/managed_care`)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
@@ -51,6 +49,38 @@ export class TentangKamiService {
 
     return result;
   }
+
+  GetOptimalisasiBPJS(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/optimalisasi_bpjs/optimalisasi_bpjs`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  // GetLintasarta(): Observable<any> {
+  //   debugger
+  //   var result = this.http.get<any>(this.baseurl + `/Lintasarta/Lintasarta`)
+  //     .pipe(
+  //       retry(1),
+  //       catchError(this.errorHandl)
+  //     )
+
+  //   return result;
+  // }
+
+  // GetBisnisUnit(): Observable<any> {
+  //   debugger
+  //   var result = this.http.get<any>(this.baseurl + `/Business_Unit/Business_Unit`)
+  //     .pipe(
+  //       retry(1),
+  //       catchError(this.errorHandl)
+  //     )
+
+  //   return result;
+  // }
 
   // GET BY ID
   // GetArticle(id): Observable<Article> {

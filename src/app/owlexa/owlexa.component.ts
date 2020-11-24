@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TentangKamiService } from '../services/tentang-kami.service';
 
 @Component({
   selector: 'app-owlexa',
@@ -7,7 +8,16 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class OwlexaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tentangKamiService: TentangKamiService) { }
+  result: any;
+  business_unit: {
+    id_business_unit: '',
+    judul_business_unit: '',
+    isi_business_unit: '',
+    hyperlink_business_unit: '',
+    video_business_unit: '',
+  };
+
   @Input() judul: any = 'Tentang Owlexa';
   @Input() smalltext = 'Owlexa sebagai Unit Bisnis';
   // tslint:disable-next-line:max-line-length
@@ -24,9 +34,22 @@ export class OwlexaComponent implements OnInit {
     'Didukung oleh sistem dan teknologi yang handal serta sumber daya manusia' +
     ' berpengalaman di bidangnya, Owlexa dapat memberikan layanan administrasi' +
     ' kesehatan yang optimal, efisien, cepat dan akurat serta pelayanan terbaik.';
-  @Input() image ='<img src="assets/images/logo_kecil_resize.jpg">';
+  @Input() image = '<img src="assets/images/logo_kecil_resize.jpg">';
 
   ngOnInit() {
+    this.tentangKamiService.GetBisnisUnit().subscribe(response => {
+      debugger
+      this.result = response.data;
+      if (this.result != undefined) {
+        debugger
+        this.business_unit = this.result[0];
+        // this.video = this.business_unit.video_business_unit;
+        console.log(this.business_unit)
+      }
+    }, error => { },
+      () => {
+      })
+
   }
 
 }
