@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { debug } from 'console';
+// import { debug } from 'console';
 
 import { TentangKamiService } from '../services/tentang-kami.service';
 @Component({
@@ -10,12 +10,12 @@ import { TentangKamiService } from '../services/tentang-kami.service';
 export class LintasartaComponent implements OnInit {
 
   constructor(private tentangKamiService: TentangKamiService) { }
-  result : any;
+  result: any;
   judul: any;
   smalltext: string;
   description: string;
-  video : string;
-  lintasarta : {
+  video: string;
+  lintasarta: {
     id_lintasarta: '',
     judul_lintasarta: '',
     isi_lintasarta: '',
@@ -25,13 +25,13 @@ export class LintasartaComponent implements OnInit {
   ngOnInit() {
     this.tentangKamiService.GetLintasarta().subscribe(response => {
       debugger
-    this.result = response.data;
-    if(this.result != undefined){
-      debugger
-      this.lintasarta = this.result[0];
-      this.video = this.lintasarta.video_lintasarta;
-      console.log(this.lintasarta)
-    }
+      this.result = response.data;
+      if (this.result != undefined) {
+        debugger
+        this.lintasarta = this.result[0];
+        this.video = this.lintasarta.video_lintasarta;
+        console.log(this.lintasarta)
+      }
 
     }, error => { },
       () => {

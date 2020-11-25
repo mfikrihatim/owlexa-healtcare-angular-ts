@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LayananService } from '../services/layanan.service';
 
 @Component({
   selector: 'app-faq',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
 
-  constructor() { }
+  constructor(private LayananService: LayananService) { }
 
+  result: any;
+  faq: {
+    id_faq: '',
+    isi_faq: '',
+
+  };
   ngOnInit() {
+    this.LayananService.GetFaq().subscribe(response => {
+      debugger
+      this.result = response.data;
+      if (this.result != undefined) {
+        debugger
+        this.faq = this.result[0];
+        console.log(this.faq)
+      }
+
+    }, error => { },
+      () => {
+      })
+
   }
+
 
 }

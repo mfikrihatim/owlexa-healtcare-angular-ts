@@ -9,13 +9,14 @@
 
     <!-- Blog Entries Column -->
     <div class="col-md-8">
-      <h2>Hotel Domestik, Diskon hingga Rp400.000</h2>
-      <p>Saatnya kamu istirahat dari kegiatan sehari-hari yang menumpuk.
+      <h2>{{promo.nama_promo}}</h2>
+      <div [innerHTML]="promo.ket_promo"></div>
+      <!-- <p>Saatnya kamu istirahat dari kegiatan sehari-hari yang menumpuk.
         Mau santai di pantai, merasakan sejuknya pegunungan, atau bermain dan chill bareng teman-teman.
         Mau di mana pun, bisa staycation saat valentine di hotel domestik kesukaan.
         Dapatkan diskon hingga Rp400.000 hanya di aplikasi tiket.com
         Baca Syarat dan Ketentuan di bawah, ya!
-      </p>
+      </p> -->
       mau ke mana? semua ada tiketnya!
       <hr>
       <div class="col-md-2">
@@ -24,7 +25,7 @@
         <label>Platfom</label>
       </div>
       <div class="col-md-2">
-        <label>13 - 19 Feb 2020</label>
+        <label>{{promo.exp_promo}}</label>
         <label>Kapanpun</label>
         <label>Android, iOS</label>
       </div>
