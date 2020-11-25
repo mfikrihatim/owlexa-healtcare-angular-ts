@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: `http://localhost/OWLEXA/owlexa-api-ci/index.php/api`
+  apiUrl: `http://localhost/OWLEXA/healthcare-api-ci/index.php/api`
 };
 
 /*

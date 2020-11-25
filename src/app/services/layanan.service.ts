@@ -60,6 +60,55 @@ export class LayananService {
     return result;
   }
 
+  GetArtikel(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/article/article`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  GetFaq(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/faq/faq`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  GetEvent(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/event/event`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  GetPromo(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/promo/promo`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+  GetKarir(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/karir/karir`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
   // GetLintasarta(): Observable<any> {
   //   debugger
   //   var result = this.http.get<any>(this.baseurl + `/Lintasarta/Lintasarta`)

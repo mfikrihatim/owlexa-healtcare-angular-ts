@@ -12,12 +12,12 @@
     <img class="img-fluid rounded border-image" src="assets/images/owlexa.png">
     <div class="card">
       <div class="card-body">
-    <img src="assets/images/owlexa.png" id="small_image">
-    <div class="mb25 mb50-sm"></div>
+        <img src="assets/images/owlexa.png" id="small_image">
+        <div class="mb25 mb50-sm"></div>
 
         <div class="row">
           <div class="col-8">
-            <h2><b>Owlexa </b>- Programmer iOS Developer</h2>
+            <h2><b>Owlexa </b>- {{karir.posisi_karir}}</h2>
             <b>OWLEXA <span class="fa fa-thumb-tack"></span></b><br><br>
             <a href="owlexa/detail-karir" class="btn btn-primary">APPLY NOW</a>
           </div>
@@ -38,7 +38,8 @@
     <div class="card">
       <div class="card-body">
         <h3><b>Jobs Description</b></h3>
-        <p class="text-justify">With clear vision to be the best mass market bank that powered by digital,
+        <div [innerHTML]="karir.isi_karir"></div>
+        <!-- <p class="text-justify">With clear vision to be the best mass market bank that powered by digital,
           PT.Lintasarta brings Owlexa, our latest innovation. Owlexa is a revolutionary apps
           from PT.Lintasarta that is simple, smart, and safe in managing your life finance.
           Join Owlexa Solution team as Mobile iOS Developer to deliver banking reinvented!
@@ -98,7 +99,7 @@
           <li>Nginx</li>
           <li>JavaScript</li>
           <li>Android</li>
-        </ul>
+        </ul> -->
 
       </div>
     </div>
@@ -107,4 +108,3 @@
 <div class="mb60 mb50-sm"></div>
 
 <app-footerpage></app-footerpage>
-
