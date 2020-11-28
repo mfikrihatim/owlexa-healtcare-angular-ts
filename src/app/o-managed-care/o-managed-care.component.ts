@@ -24,7 +24,7 @@ export class OManagedCareComponent implements OnInit {
       this.result = response.data;
       if (this.result != undefined) {
         debugger
-        this.managed_care = this.result[0];
+        this.managed_care = this.result;
         console.log(this.managed_care)
       }
 
