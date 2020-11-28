@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LayananService } from '../services/layanan.service';
 
 @Component({
   selector: 'app-o-managed-care',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OManagedCareComponent implements OnInit {
 
-  constructor() { }
+  constructor(private LayananService: LayananService) { }
 
+  result: any;
+  managed_care: {
+    id_managed_care: '',
+    judul_managed_care: '',
+    isi_managed_care: '',
+    hyperlink_managed_care: '',
+    foto_managed_care: '',
+  };
   ngOnInit() {
+    this.LayananService.GetManagedCare().subscribe(response => {
+      debugger
+      this.result = response.data;
+      if (this.result != undefined) {
+        debugger
+        this.managed_care = this.result[0];
+        console.log(this.managed_care)
+      }
+
+    }, error => { },
+      () => {
+      })
+
   }
 
 }

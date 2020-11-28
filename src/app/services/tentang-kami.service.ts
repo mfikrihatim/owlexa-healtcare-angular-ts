@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment'
 @Injectable({
   providedIn: 'root'
 })
-export class TentangKamiService { 
+export class TentangKamiService {
   // Http Headers
   httpOptions = {
     // headers: new HttpHeaders({
@@ -21,18 +21,38 @@ export class TentangKamiService {
   constructor(private http: HttpClient) { }
   // GET
   GetStruktureOrganisasi(): Observable<any> {
-    debugger
-      var result = this.http.get<any>(this.baseurl + `/Struktur_Organisasi/Struktur_Organisasi`)
+    var result = this.http.get<any>(this.baseurl + `/Struktur_Organisasi/Struktur_Organisasi`)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
       )
-    
+
     return result;
   }
 
-  
-   // GET BY ID
+  GetLintasarta(): Observable<any> {
+    debugger
+    var result = this.http.get<any>(this.baseurl + `/Lintasarta/Lintasarta`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  GetBisnisUnit(): Observable<any> {
+    debugger
+    var result = this.http.get<any>(this.baseurl + `/Business_Unit/Business_Unit`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  // GET BY ID
   // GetArticle(id): Observable<Article> {
   //   return this.http.get<any>(this.baseurl + 'article/id?id=' + id)
   //   .pipe(
@@ -41,7 +61,7 @@ export class TentangKamiService {
   //   )
   // }
 
-   
+
   // Error handling
   errorHandl(error) {
     let errorMessage = '';
@@ -54,6 +74,6 @@ export class TentangKamiService {
     }
     console.log(errorMessage);
     return throwError(errorMessage);
- }
+  }
 
 }
