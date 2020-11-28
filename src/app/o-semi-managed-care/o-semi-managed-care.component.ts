@@ -24,7 +24,7 @@ export class OSemiManagedCareComponent implements OnInit {
       this.result = response.data;
       if (this.result != undefined) {
         debugger
-        this.semi_managed_care = this.result[0];
+        this.semi_managed_care = this.result;
         console.log(this.semi_managed_care)
       }
 

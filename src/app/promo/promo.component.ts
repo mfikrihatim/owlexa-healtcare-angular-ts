@@ -27,7 +27,7 @@ export class PromoComponent implements OnInit {
       this.result = response.data;
       if (this.result != undefined) {
         debugger
-        this.promo = this.result[0];
+        this.promo = this.result;
         console.log(this.promo)
       }
 

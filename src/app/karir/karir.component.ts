@@ -24,7 +24,7 @@ export class KarirComponent implements OnInit {
       this.result = response.data;
       if (this.result != undefined) {
         debugger
-        this.karir = this.result[0];
+        this.karir = this.result;
         console.log(this.karir)
       }
 

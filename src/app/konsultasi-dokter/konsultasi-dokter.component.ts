@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { LayananService } from '../services/layanan.service';
 
 @Component({
   selector: 'app-konsultasi-dokter',
@@ -9,9 +10,32 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class KonsultasiDokterComponent implements OnInit {
 
-  constructor(public matDialog: MatDialog) { }
+  constructor(public matDialog: MatDialog, private LayananService: LayananService) { }
 
+  result: any;
+  konsultasi: {
+    id_konsultasi: '',
+    nama_konsultasi: '',
+    perusahaan_konsultasi: '',
+    posisi_konsultasi: '',
+    email_konsultasi: '',
+    telp_konsultasi: '',
+    pertanyaan_konsultasi: '',
+  };
   ngOnInit() {
+    this.LayananService.GetKonsultasi().subscribe(response => {
+      debugger
+      this.result = response.data;
+      if (this.result != undefined) {
+        debugger
+        this.konsultasi = this.result;
+        console.log(this.konsultasi)
+      }
+
+    }, error => { },
+      () => {
+      })
+
   }
 
   openModal() {

@@ -22,7 +22,7 @@ export class FaqComponent implements OnInit {
       this.result = response.data;
       if (this.result != undefined) {
         debugger
-        this.faq = this.result[0];
+        this.faq = this.result;
         console.log(this.faq)
       }
 

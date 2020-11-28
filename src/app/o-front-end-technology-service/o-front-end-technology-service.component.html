@@ -17,9 +17,13 @@
     </div>
   </div>
   <div class="mb25 mb50-sm"></div>
-  <h2 class="title custom">Owlexa Corporate Health Plan</h2>
-  <span><b>Perlindungan Terbaik Bagi Karyawan</b></span>
-  <p class="text-justify">
+  <div *ngFor="let item of technologi_service">
+    <div class="mb25 mb50-sm"></div>
+    <h2 class="title custom">Owlexa Corporate Health Plan</h2>
+    <span><b>{{item.judul_technologi_service}}</b></span>
+    <div [innerHTML]="item.isi_technologi_service"></div>
+  </div>
+  <!-- <p class="text-justify">
     Owlexa berkomitmen menjadi yang terdepan untuk membantu perusahaan menghadapi situasi bisnis dengan memberikan
     solusi asuransi jiwa menyeluruh untuk mendukung pencapaian bisnis. Untuk itu Owlexa menghadirkan Owlexa
     Corporate Solutions yang memberikan solusi asuransi bagi perusahaan dalam mengelola kesejahteraan karyawan.
@@ -47,7 +51,7 @@
       Selain itu, manfaat kesehatan bagi karyawan dapat disesuaikan dengan ketersediaan dana
       perusahaan.
     </li>
-  </ul>
+  </ul> -->
   <div class="mb25 mb50-sm"></div>
 
   <h2 class="title custom">Manfaat</h2>
@@ -79,8 +83,7 @@
 
     <div class="col-sm-4">
       <div class="text-block hover-bg text-center bg-gray2">
-        <img src="assets/images/svg/medical-history.svg" alt="Check up" width="42"
-             class="img-responsive">
+        <img src="assets/images/svg/medical-history.svg" alt="Check up" width="42" class="img-responsive">
         <h3 class="service-title">Check ups</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni dignissimos rem.</p>
       </div><!-- End .text-block -->
@@ -104,8 +107,7 @@
 
     <div class="col-sm-4">
       <div class="text-block hover-bg text-center bg-gray2">
-        <img src="assets/images/svg/microscope.svg" alt="Laboratory" width="42"
-             class="img-responsive">
+        <img src="assets/images/svg/microscope.svg" alt="Laboratory" width="42" class="img-responsive">
         <h3 class="service-title">Laboratory</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni dignissimos rem.</p>
       </div><!-- End .text-block -->
@@ -113,8 +115,7 @@
 
     <div class="col-sm-4">
       <div class="text-block hover-bg text-center bg-gray2">
-        <img src="assets/images/svg/microscope.svg" alt="Laboratory" width="42"
-             class="img-responsive">
+        <img src="assets/images/svg/microscope.svg" alt="Laboratory" width="42" class="img-responsive">
         <h3 class="service-title">Laboratory</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni dignissimos rem.</p>
       </div><!-- End .text-block -->
@@ -122,8 +123,7 @@
 
     <div class="col-sm-4">
       <div class="text-block hover-bg text-center bg-gray2">
-        <img src="assets/images/svg/microscope.svg" alt="Laboratory" width="42"
-             class="img-responsive">
+        <img src="assets/images/svg/microscope.svg" alt="Laboratory" width="42" class="img-responsive">
         <h3 class="service-title">Laboratory</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni dignissimos rem.</p>
       </div><!-- End .text-block -->

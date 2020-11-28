@@ -17,10 +17,13 @@
     </div>
   </div>
   <div class="mb25 mb50-sm"></div>
-  <h2 class="title custom">Owlexa Corporate Health Plan</h2>
-  <span><b>{{semi_managed_care.judul_semi_managed_care}}</b></span>
-  <div [innerHTML]="semi_managed_care.isi_semi_managed_care"></div>
-  <p class="text-justify">
+  <div *ngFor="let item of semi_managed_care">
+    <div class="mb25 mb50-sm"></div>
+    <h2 class="title custom">Owlexa Corporate Health Plan</h2>
+    <span><b>{{item.judul_semi_managed_care}}</b></span>
+    <div [innerHTML]="item.isi_semi_managed_care"></div>
+  </div>
+  <!-- <p class="text-justify">
     Owlexa berkomitmen menjadi yang terdepan untuk membantu perusahaan menghadapi situasi bisnis dengan memberikan
     solusi asuransi jiwa menyeluruh untuk mendukung pencapaian bisnis. Untuk itu Owlexa menghadirkan Owlexa
     Corporate Solutions yang memberikan solusi asuransi bagi perusahaan dalam mengelola kesejahteraan karyawan.
@@ -48,7 +51,7 @@
       Selain itu, manfaat kesehatan bagi karyawan dapat disesuaikan dengan ketersediaan dana
       perusahaan.
     </li>
-  </ul>
+  </ul> -->
   <div class="mb25 mb50-sm"></div>
 
   <h2 class="title custom">Manfaat</h2>
