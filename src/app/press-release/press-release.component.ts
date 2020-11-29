@@ -21,29 +21,30 @@ export class PressReleaseComponent implements OnInit {
     hyperlink: '',
   };
   ngOnInit() {
-    this.getBerita();
+
     this.newsService.listNews().subscribe(data => {
       this.news = data;
+      // this.getBerita();
     }, erro => {
       this.news = JSON.parse(erro.error).message;
     });
     console.log('news', this.news)
   }
 
-  getBerita() {
-    this.LayananService.GetBerita().subscribe(response => {
-      debugger
-      this.result = response.data;
-      if (this.result != undefined) {
-        debugger
-        this.berita = this.result[0];
-        console.log(this.berita)
-      }
+  // getBerita() {
+  //   this.LayananService.GetBerita().subscribe(response => {
+  //     debugger
+  //     this.result = response.data;
+  //     if (this.result != undefined) {
+  //       debugger
+  //       this.berita = this.result[0];
+  //       console.log(this.berita)
+  //     }
 
-    }, error => { },
-      () => {
-      })
-  }
+  //   }, error => { },
+  //     () => {
+  //     })
+  // }
 
 }
 
