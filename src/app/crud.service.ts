@@ -10,7 +10,8 @@ export class CrudService {
   apiUrlProvider: string = 'http://localhost:8080/api/provider/';
   apiUrlProviderBaru: string = 'http://localhost:8080/api/provider/detail';
   apiUrlNews: string = 'http://localhost:8080/api/news';
-  apiUrlArticel: string = 'http://localhost:8080/api/article';
+  // apiUrlArticel: string = 'http://localhost:8080/api/article';
+  apiUrlArticel: string = 'http://localhost/owlexa/healthcare-api-ci/index.php/api/article/article';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) { }
 
