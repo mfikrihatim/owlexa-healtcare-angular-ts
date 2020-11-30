@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { LayananService } from '../services/layanan.service';
 
 @Component({
@@ -8,11 +9,11 @@ import { LayananService } from '../services/layanan.service';
 })
 export class DetailPromoComponent implements OnInit {
 
-  constructor(private LayananService: LayananService) { }
-
+  constructor(private activatedRoute: ActivatedRoute, private LayananService: LayananService) { }
+  id_promo: string = null;
   result: any;
   promo: {
-    id_promo: '',
+    // id_promo: '',
     nama_promo: '',
     kode_promo: '',
     exp_promo: '',
@@ -22,9 +23,10 @@ export class DetailPromoComponent implements OnInit {
     hyperlink_promo: '',
   };
   ngOnInit() {
-    this.LayananService.GetPromo().subscribe(response => {
-      debugger
-      this.result = response.data;
+    this.id_promo = this.activatedRoute.snapshot.queryParamMap.get('id_promo');
+    debugger
+    this.LayananService.getByIdPromo(this.id_promo).subscribe(data => {
+      this.result = data.data[0];
       if (this.result != undefined) {
         debugger
         this.promo = this.result[0];

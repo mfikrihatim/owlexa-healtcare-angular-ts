@@ -170,6 +170,26 @@ export class LayananService {
     return result;
   }
 
+  GetKontak(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/Contact/Contact`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  getByIdPromo(id_promo): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/promo/promo` + id_promo)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
   // PostKonsultasi(): Observable<any> {
   //   var result = this.http.post<any>(this.baseurl + `/konsultasi/konsultasi`)
   //     .pipe(
