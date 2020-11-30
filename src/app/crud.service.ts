@@ -8,13 +8,14 @@ import { environment } from '../environments/environment'
   providedIn: 'root'
 })
 export class CrudService {
-    // Base URL
-    baseurl = `${environment.apiUrl}`
+  // Base URL
+  baseurl = `${environment.apiUrl}`
   apiUrlProvider: string = 'http://localhost:8080/api/provider/';
   apiUrlProviderBaru: string = 'http://localhost:8080/api/provider/detail';
-  apiUrlNews: string = 'http://localhost:8080/api/news';
+  // apiUrlNews: string = 'http://localhost:8080/api/news';
+  apiUrlNews: string = this.baseurl + '/news/news';
   // apiUrlArticel: string = 'http://localhost:8080/api/article';
-  apiUrlArticel: string = this.baseurl +  '/article/article';
+  apiUrlArticel: string = this.baseurl + '/article/article';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) { }
 
@@ -62,8 +63,11 @@ export class CrudService {
     return this.http.get(`${this.apiUrlArticel}/`);
   }
 
-    //get by id articel
-    getByIdArticel(id): Observable<any> {
-      return this.http.get(`${this.apiUrlArticel}?id=` + id);
-    }
+  //get by id articel
+  getByIdArticel(id): Observable<any> {
+    return this.http.get(`${this.apiUrlArticel}?id=` + id);
+  }
+  getByIdBerita(id): Observable<any> {
+    return this.http.get(`${this.apiUrlArticel}?id=` + id);
+  }
 }

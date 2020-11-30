@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../crud.service';
-import { LayananService } from '../services/layanan.service';
+
 
 @Component({
   selector: 'app-press-release',
@@ -9,21 +9,19 @@ import { LayananService } from '../services/layanan.service';
 })
 export class PressReleaseComponent implements OnInit {
   news: News[];
-  constructor(private newsService: CrudService, private LayananService: LayananService) {
-
-  }
-  result: any;
-  berita: {
-    id: '',
-    img: '',
-    title: '',
-    wording: '',
-    hyperlink: '',
-  };
+  constructor(private newsService: CrudService) { }
+  // result: any;
+  // berita: {
+  //   id: '',
+  //   img: '',
+  //   title: '',
+  //   wording: '',
+  //   hyperlink: '',
+  // };
   ngOnInit() {
 
     this.newsService.listNews().subscribe(data => {
-      this.news = data;
+      this.news = data.data;
       // this.getBerita();
     }, erro => {
       this.news = JSON.parse(erro.error).message;
