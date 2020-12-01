@@ -5,7 +5,7 @@
 <div class="container">
   <h2 class="title custom">Artikel Hari Ini</h2>
   <div class="mb25 mb50-sm"></div>
-  <div class="card mb-4" *ngFor="let articel of articel">
+  <div class="card mb-4" *ngFor="let item of articel">
     <div class="card-body">
       <div class="row">
         <div class="col-lg-6">
@@ -15,9 +15,9 @@
           </a>
         </div>
         <div class="col-lg-6">
-          <h2 class="card-title">{{articel.title}}</h2>
-          <p class="card-text text-justify">{{articel.wording}}</p>
-          <a href="owlexa/artikel-detail" class="btn btn-primary">Read More &rarr;</a>
+          <h2 class="card-title">{{item.title}}</h2>
+          <p class="card-text text-justify">{{item.wording}}</p>
+          <a href="owlexa/artikel-detail?id={{item.id}}" class="btn btn-primary">Read More &rarr;</a>
         </div>
       </div>
     </div>

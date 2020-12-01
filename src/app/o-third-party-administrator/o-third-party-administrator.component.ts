@@ -24,7 +24,7 @@ export class OThirdPartyAdministratorComponent implements OnInit {
       this.result = response.data;
       if (this.result != undefined) {
         debugger
-        this.third_party = this.result[0];
+        this.third_party = this.result;
         console.log(this.third_party)
       }
 

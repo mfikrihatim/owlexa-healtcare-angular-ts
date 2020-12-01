@@ -24,7 +24,7 @@ export class OOptimasiBpjsComponent implements OnInit {
       this.result = response.data;
       if (this.result != undefined) {
         debugger
-        this.optimalisasi_bpjs = this.result[0];
+        this.optimalisasi_bpjs = this.result;
         console.log(this.optimalisasi_bpjs)
       }
 

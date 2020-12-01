@@ -12,7 +12,8 @@ export class ArtikelComponent implements OnInit {
 
   ngOnInit() {
     this.articelService.listArticel().subscribe(data => {
-      this.articel = data;
+      debugger
+      this.articel = data.data;
     }, erro => {
       this.articel = JSON.parse(erro.error).message;
     });

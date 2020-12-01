@@ -20,6 +20,16 @@ export class LayananService {
 
   constructor(private http: HttpClient) { }
   GET
+
+  GetCorporate(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/Corporate_Health/Corporate_Health`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
   GetThirdParty(): Observable<any> {
     var result = this.http.get<any>(this.baseurl + `/third_party/third_party`)
       .pipe(
@@ -99,6 +109,7 @@ export class LayananService {
 
     return result;
   }
+
   GetKarir(): Observable<any> {
     var result = this.http.get<any>(this.baseurl + `/karir/karir`)
       .pipe(
@@ -108,6 +119,86 @@ export class LayananService {
 
     return result;
   }
+
+  GetSurvey(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/survey_online/survey_online`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  GetTechnology(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/technologi_service/technologi_service`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  GetKlienBerharga(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/klien_berharga/klien_berharga`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  GetBerita(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/news/news`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  GetKonsultasi(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/konsultasi/konsultasi`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  GetKontak(): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/Contact/Contact`)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  getByIdPromo(id_promo): Observable<any> {
+    var result = this.http.get<any>(this.baseurl + `/promo/promo` + id_promo)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      )
+
+    return result;
+  }
+
+  // PostKonsultasi(): Observable<any> {
+  //   var result = this.http.post<any>(this.baseurl + `/konsultasi/konsultasi`)
+  //     .pipe(
+  //       retry(1),
+  //       catchError(this.errorHandl)
+  //     )
+
+  //   return result;
+  // }
 
   // GetLintasarta(): Observable<any> {
   //   debugger
